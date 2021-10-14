@@ -12,4 +12,5 @@ import lombok.Setter;
 public class Report {
     private Long transactionRef;
     private String description;
+    private String reason;
 }

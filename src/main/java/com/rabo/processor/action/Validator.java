@@ -14,8 +14,11 @@ public class Validator {
         Map<Long, String> record = new HashMap<>();
         List<Report> validationReports = new ArrayList<>();
         for (FileRecord fileRecord : fileRecords) {
-            if(!isUniqueTransactionReference(record, fileRecord) || !isEndBalanceCorrect(fileRecord)) {
-                validationReports.add(new Report(fileRecord.getTransactionRef(), fileRecord.getDescription()));
+            if(!isUniqueTransactionReference(record, fileRecord)) {
+                validationReports.add(new Report(fileRecord.getTransactionRef(), fileRecord.getDescription(), "The transaction reference is not unique"));
+            }
+            if (!isEndBalanceCorrect(fileRecord)) {
+                validationReports.add(new Report(fileRecord.getTransactionRef(), fileRecord.getDescription(), "The end balance amount is wrong"));
             }
         }
         return validationReports;

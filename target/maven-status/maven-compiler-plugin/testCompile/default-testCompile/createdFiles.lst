@@ -1,5 +1,0 @@
-com/rabo/processor/action/ValidatorTest.class
-com/rabo/processor/handler/XmlHandlerTest.class
-com/rabo/processor/controller/ProcessorControllerTest.class
-com/rabo/processor/service/FileProcessorServiceTest.class
-com/rabo/processor/handler/CsvHandlerTest.class
